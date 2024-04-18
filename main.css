@@ -1,0 +1,126 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  #game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .board {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 2px solid #333;
+    margin: auto;
+  }
+
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    transition: background-color 0.3s ease;
+  }
+
+  .cell:hover {
+    background-color: #f0f0f0;
+  }
+
+  .status {
+    width: 300px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    opacity: 1; /* Start with full opacity */
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  .status.hidden {
+    opacity: 0; /* Fade out when hidden */
+  }
+
+  #reset-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #reset-button:hover {
+    background-color: #45a049;
+  }
+
+  .cell.clicked {
+    background-color: #f0f0f0; /* Change background color when clicked */
+    transition: background-color 0.2s ease; /* Smooth transition */
+  }
+  
+  /* CSS for win message */
+.win-message {
+    color: #4CAF50; /* Green color for win message */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* CSS for draw message */
+  .draw-message {
+    color: #FFA500; /* Orange color for draw message */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+
+  @media only screen and (max-width: 600px) {
+    #game-container {
+      align-items: flex-start;
+    }
+
+    .status {
+      width: 90%;
+      margin-right: 0;
+    }
+
+    #reset-button {
+        padding: 8px 16px;
+        font-size: 14px;
+        position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+      }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .board {
+      width: 200px;
+      height: 200px;
+      font-size: 30px;
+    }
+
+    .cell {
+      font-size: 30px;
+    }
+
+    .status {
+      font-size: 16px;
+    }
+  }
